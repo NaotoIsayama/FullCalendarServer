@@ -27,7 +27,7 @@ exports.handler = async function(event, context) {
 
   // Main event handler (GET request)
   try {
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR_ID}/events?key=${process.env.GOOGLE_API_KEY}`;
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR_ID}/events?key=${process.env.API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
 
