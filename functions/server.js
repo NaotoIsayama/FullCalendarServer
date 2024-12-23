@@ -14,7 +14,6 @@ const API_KEY = process.env.API_KEY
 const CALENDAR_ID = process.env.CALENDAR_ID;
 
 const app = express();
-const PORT = 3000;
 
 app.use(cors(corsOptions));
 
@@ -32,6 +31,3 @@ app.get('/events', async (req, res) => {
     }
   });
 
-  app.listen(PORT, () => {
-    console.log(`Proxy server running on http://localhost:${PORT}`);
-  });
