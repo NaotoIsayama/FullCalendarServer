@@ -22,7 +22,7 @@ app.use(cors(corsOptions));
 exports.handler = async function(event, context) {
   // CORS headers for pre-flight requests
   const headers = {
-    'Access-Control-Allow-Origin': 'https://naotoisayama.github.io', // Allow requests from your frontend
+    'Access-Control-Allow-Origin': 'https://naotoisayama.github.io/FullCalendarGoogleCalendar', // Allow requests from your frontend
     'Access-Control-Allow-Methods': 'GET',
     'Access-Control-Allow-Headers': 'Content-Type', // Add any headers you may need
   };
