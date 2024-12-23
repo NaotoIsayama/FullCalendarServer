@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const fetch = require('node-fetch'); // Make sure fetch is imported
 
 const corsOptions = {
   origin: "https://NaotoIsayama.github.io",
