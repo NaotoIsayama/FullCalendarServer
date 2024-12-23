@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 const corsOptions = {
-  origin: "https://NaotoIsauama.github.io",
+  origin: "https://NaotoIsayama.github.io",
   methods: 'GET',
   credentials: true,
 }
