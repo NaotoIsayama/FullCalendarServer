@@ -2,6 +2,12 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
+const corsOptions = {
+  origin: "https://NaotoIsauama.github.io",
+  methods: 'GET',
+  credentials: true,
+}
+
 dotenv.config();
 
 const API_KEY = process.env.API_KEY
@@ -10,7 +16,7 @@ const CALENDAR_ID = process.env.CALENDAR_ID;
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // GET request handler
 app.get('/events', async (req, res) => {
