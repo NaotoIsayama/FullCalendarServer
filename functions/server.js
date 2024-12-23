@@ -9,7 +9,7 @@ const API_KEY = process.env.API_KEY
 const CALENDAR_ID = process.env.CALENDAR_ID;
 
 
-exports.handler = async function(event, context) {
+export async function handler(event, context) {
   // CORS headers for pre-flight requests
   const headers = {
     'Access-Control-Allow-Origin': 'https://naotoisayama.github.io/FullCalendarGoogleCalendar', // Allow requests from your frontend
