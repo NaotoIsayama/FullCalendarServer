@@ -1,22 +1,12 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const fetch = require('node-fetch'); // Make sure fetch is imported
 
-const corsOptions = {
-  origin: "https://naotoisayama.github.io",
-  methods: 'GET',
-  credentials: true,
-}
+import dotenv from 'dotenv';
+import cors from 'cors';
+import fetch from 'node-fetch';
 
 dotenv.config();
 
 const API_KEY = process.env.API_KEY
 const CALENDAR_ID = process.env.CALENDAR_ID;
-
-const app = express();
-
-app.use(cors(corsOptions));
 
 
 exports.handler = async function(event, context) {
