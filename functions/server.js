@@ -12,7 +12,7 @@ const CALENDAR_ID = process.env.CALENDAR_ID;
 export async function handler(event, context) {
   // CORS headers for pre-flight requests
   const headers = {
-    'Access-Control-Allow-Origin': 'https://naotoisayama.github.io', // Allow requests from your frontend
+    'Access-Control-Allow-Origin': 'https://naotoisayama.github.io/FullCalendarGoogleCalendar/fullcalendar/dist/index.global.js', // Allow requests from your frontend
     'Access-Control-Allow-Methods': 'GET',
     'Access-Control-Allow-Headers': 'Content-Type', // Add any headers you may need
   };
