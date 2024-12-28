@@ -37,12 +37,11 @@ export async function handler(event, context) {
     const url = `https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR_ID}/events?key=${process.env.API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(JSON.stringify(data, null, 2));
 
     return {
       statusCode: 200,
       headers, // Add CORS headers to the response
-      body: JSON.stringify(data),
+      body: JSON.stringify(data, null, 2),
     };
   } catch (error) {
     console.error('Error fetching events:', error);
