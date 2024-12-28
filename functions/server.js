@@ -8,6 +8,13 @@ dotenv.config();
 const API_KEY = process.env.API_KEY
 const CALENDAR_ID = process.env.CALENDAR_ID;
 
+/*map from google calendar format to full calendar format
+function mapGoogletoFullCalendar(events){
+  return events.items.map((item) => {
+      
+    }
+  )
+}*/
 
 export async function handler(event, context) {
   // CORS headers for pre-flight requests
@@ -30,6 +37,7 @@ export async function handler(event, context) {
     const url = `https://www.googleapis.com/calendar/v3/calendars/${process.env.CALENDAR_ID}/events?key=${process.env.API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
+    console.log(JSON.stringify(data, null, 2));
 
     return {
       statusCode: 200,
