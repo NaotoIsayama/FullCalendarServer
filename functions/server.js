@@ -8,13 +8,7 @@ dotenv.config();
 const API_KEY = process.env.API_KEY
 const CALENDAR_ID = process.env.CALENDAR_ID;
 
-/*map from google calendar format to full calendar format
-function mapGoogletoFullCalendar(events){
-  return events.items.map((item) => {
-      
-    }
-  )
-}*/
+
 
 export async function handler(event, context) {
   // CORS headers for pre-flight requests
@@ -38,10 +32,24 @@ export async function handler(event, context) {
     const response = await fetch(url);
     const data = await response.json();
 
+    //map from google calendar format to full calendar format
+    let formattedResponse =[]
+    for (let i = 0; i < data.items.length; i++) {
+      formattedResponse.push(
+        {
+          id: data.items[i].id,
+          title: data.items[i].summary,
+          start: data.items[i].start.dateTime || data.item[i].start.date, 
+          end: data.items[i].end.dateTime || data.item[i].end.date,
+        }
+      )
+    }
+
+
     return {
       statusCode: 200,
       headers, // Add CORS headers to the response
-      body: JSON.stringify(data, null, 2),
+      body: formattedResponse,
     };
   } catch (error) {
     console.error('Error fetching events:', error);
